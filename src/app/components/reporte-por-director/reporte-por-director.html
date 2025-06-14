@@ -1,0 +1,33 @@
+<!-- reporte-por-director.html -->
+<div class="p-4 rounded-lg shadow bg-white max-w-3xl mx-auto">
+  <h2 class="text-2xl font-bold mb-4">Películas por Director (Gráfico de Torta)</h2>
+
+  <div class="mb-4">
+    <label class="block mb-2 font-medium">Seleccioná un director:</label>
+    <select [(ngModel)]="directorSeleccionado" class="w-full p-2 border rounded">
+      <option value="" disabled>-- Seleccionar --</option>
+      <option *ngFor="let d of directores" [value]="d">{{ d }}</option>
+    </select>
+  </div>
+
+  <button
+    (click)="buscarDatos()"
+    [disabled]="!directorSeleccionado"
+    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+  >
+    Buscar
+  </button>
+
+  <div *ngIf="chartData.labels?.length" class="mt-6">
+    <h3 class="text-lg font-semibold mb-4">
+      Películas de {{ directorSeleccionado }} por género
+    </h3>
+    <div class="max-w-md mx-auto">
+      <canvas
+        baseChart
+        [data]="chartData"
+        [options]="chartOptions"
+      ></canvas>
+    </div>
+  </div>
+</div>

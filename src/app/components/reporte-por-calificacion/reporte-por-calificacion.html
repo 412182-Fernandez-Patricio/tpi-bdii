@@ -1,0 +1,32 @@
+<div class="p-4 rounded-lg shadow bg-white max-w-3xl mx-auto">
+  <h2 class="text-2xl font-bold mb-4">Usuarios por Calificación de Película</h2>
+
+  <div class="mb-4">
+    <label class="block mb-2 font-medium">Seleccioná una película:</label>
+    <select [(ngModel)]="peliculaSeleccionada" class="w-full p-2 border rounded">
+      <option value="" disabled>-- Seleccionar --</option>
+      <option *ngFor="let p of peliculas" [value]="p">{{ p }}</option>
+    </select>
+  </div>
+
+  <button
+    (click)="buscarDatos()"
+    [disabled]="!peliculaSeleccionada"
+    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+  >
+    Buscar
+  </button>
+
+  <div *ngIf="chartData.labels?.length" class="mt-6">
+    <h3 class="text-lg font-semibold mb-4">
+      Calificaciones de {{ peliculaSeleccionada }}
+    </h3>
+    <div class="max-w-md mx-auto">
+      <canvas
+        baseChart
+        [data]="chartData"
+        [options]="chartOptions"
+      ></canvas>
+    </div>
+  </div>
+</div>
