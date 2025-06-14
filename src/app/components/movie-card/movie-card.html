@@ -1,0 +1,25 @@
+<div class="relative max-w-[120px] bg-white rounded-lg shadow-md overflow-hidden text-xs">
+
+  <!-- Imagen -->
+  <img
+    [src]="posterUrl"
+    [alt]="title"
+    class="w-full h-40 object-cover"
+  />
+
+  <!-- Overlay con degradado -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent"></div>
+
+  <!-- Estrella con calificación -->
+  <div class="absolute top-1 right-1 z-20 bg-yellow-400/80 text-black text-[10px] font-bold px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow">
+    <span>★</span>
+    <span>{{ rating }}</span>
+  </div>
+
+  <!-- Info película -->
+  <div class="absolute bottom-0 left-0 right-0 p-2 z-10">
+    <h3 class="text-sm font-semibold text-white mb-1 truncate">{{ title }}</h3>
+    <p class="text-gray-200 text-xs mb-0.5">Año: {{ year }}</p>
+    <p class="text-gray-200 text-xs">Duración: {{ duration }}</p>
+  </div>
+</div>

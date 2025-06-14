@@ -1,0 +1,37 @@
+<div class="max-w-4xl mx-auto p-4 space-y-4 pt-20">
+
+  <!-- Filtros -->
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <input type="date" [(ngModel)]="desde" class="border rounded px-2 py-1" placeholder="Desde">
+    <input type="date" [(ngModel)]="hasta" class="border rounded px-2 py-1" placeholder="Hasta">
+    <input type="number" [(ngModel)]="topX" min="1" class="border rounded px-2 py-1" placeholder="Top X">
+
+    <select [(ngModel)]="genero" class="border rounded px-2 py-1 col-span-2 md:col-span-1">
+      <option value="">Todos los géneros</option>
+      <option *ngFor="let g of generos" [value]="g">{{ g }}</option>
+    </select>
+
+    <select [(ngModel)]="director" class="border rounded px-2 py-1 col-span-2 md:col-span-1">
+      <option value="">Todos los directores</option>
+      <option *ngFor="let d of directores" [value]="d">{{ d }}</option>
+    </select>
+  </div>
+
+  <!-- Botón -->
+  <button (click)="buscar()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+    Buscar
+  </button>
+
+  <!-- Resultados -->
+  <div *ngIf="peliculas().length > 0" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 pt-4">
+    <app-movie-card
+      *ngFor="let peli of peliculas()"
+      [posterUrl]="peli.posterUrl"
+      [title]="peli.title"
+      [year]="peli.year"
+      [duration]="peli.duration"
+      [rating]="peli.rating"
+    />
+  </div>
+
+</div>
