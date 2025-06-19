@@ -1,0 +1,55 @@
+<div class="flex flex-col gap-4 ">
+  <app-report-container class="rounded-2xl bg-white shadow-md p-6">
+    <div slot="izquierda" class="flex flex-col gap-4 items-center justify-center h-full w-full text-center">
+      <!--titulo-->
+      <p class="text-xl">PRIMER REPORTE</p>
+      <!--descripcion-->
+      <p> Lorem ipsum dolor sit amet consectetur adipiscing elit imperdiet etiam, eros libero phasellus tempus at nibh mauris congue platea, potenti sapien senectus convallis velit varius fusce nascetur.
+
+      </p>
+      <app-code-block
+        class="w-full max-w-xl"
+        [code]="'db.peliculas.find({ rating: { $gt: 8 } })\n'"
+        [language]="'MongoDB'"
+      ></app-code-block>
+    </div>
+
+    <img slot="derecha" src="https://mexico.unir.net/wp-content/uploads/sites/6/2022/05/grafico-de-barras.jpg" alt="img">
+  </app-report-container>
+
+  <app-report-container class="rounded-2xl bg-white shadow-md p-6">
+    <div slot="derecha" class="flex flex-col gap-4 items-center justify-center h-full w-full text-center">
+      <!--titulo-->
+      <p class="text-xl">SEGUNDO REPORTE</p>
+      <!--descripcion-->
+      <p> Lorem ipsum dolor sit amet consectetur adipiscing elit imperdiet etiam, eros libero phasellus tempus at nibh mauris congue platea, potenti sapien senectus convallis velit varius fusce nascetur.
+
+      </p>
+      <app-code-block
+        class="w-full max-w-xl"
+        [code]="'db.peliculas.find({ rating: { $gt: 8 } })\n'"
+        [language]="'MongoDB'"
+      ></app-code-block>
+    </div>
+    <img slot="izquierda" src="https://mexico.unir.net/wp-content/uploads/sites/6/2022/05/grafico-de-barras.jpg" alt="img">
+  </app-report-container>
+
+
+  <app-report-container class="rounded-2xl bg-white shadow-md p-6">
+    <div slot="izquierda" class="flex flex-col gap-4 items-center justify-center h-full w-full text-center">
+      <!--titulo-->
+      <p class="text-xl">TERCER REPORTE</p>
+      <!--descripcion-->
+      <p> Lorem ipsum dolor sit amet consectetur adipiscing elit imperdiet etiam, eros libero phasellus tempus at nibh mauris congue platea, potenti sapien senectus convallis velit varius fusce nascetur.
+
+      </p>
+      <app-code-block
+        class="w-full max-w-xl"
+        [code]="'db.peliculas.find({ rating: { $gt: 8 } })\n'"
+        [language]="'MongoDB'"
+      ></app-code-block>
+    </div>
+
+    <img slot="derecha" src="https://mexico.unir.net/wp-content/uploads/sites/6/2022/05/grafico-de-barras.jpg" alt="img">
+  </app-report-container>
+</div>
